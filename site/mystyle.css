@@ -1,0 +1,38 @@
+html{
+  font-size: 25px;
+  font-family: "New Times Roman";
+  color: #8578E;
+  background-color: #C0CFFA;
+}
+
+li{
+  display:inline;
+  padding: 20px;
+  font-size: 40px;
+}
+
+a{
+  color: #C0CFFA
+}
+
+a:hover{
+  text-decoration:underline;
+  color: #212C58
+}
+
+li:hover{
+  color: #FFC94D
+}
+
+img{
+  max-width:600px;
+  max-height: 400px;
+  padding: 40px;
+}
+
+h1 {
+  font-size: 70px;
+  text-align:center;
+  margin-top:20px;
+  margin-bottom: 0px;
+}
