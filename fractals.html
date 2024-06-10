@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Fire Fractals</title>
+  </head>
+
+  <body>
+  <h1> Fire Fractals! </h1>
+
+  <h2> Koch Curve </h2>
+  <p>
+    Basic koch_curve(t, 4, 20)
+  <p>
+  <img src="00.png" alt="Koch Curve">
+  <p>
+    koch_curve2(raphael, 4, 15, 2)
+    The depth two of this Koch Curve includes two spikes instead of the usual one. The width and color are also modified and every other step is skipped.
+  <p>
+  <img src="01.png" alt="Koch Curve Modified">
+  <p>
+    def koch_curve2(t, depth, size, w):
+        t.width(w)
+        if (depth == 1):
+            t.fd(size)
+        else:
+            t.pencolor("green")
+            koch_curve2(t, depth-1, size, w)
+            t.lt(75)
+            t.pencolor("green")
+            koch_curve2(t, depth-1, size, w)
+            t.rt(150)
+            t.pencolor("white")
+            koch_curve2(t, depth-1, size, w)
+            t.lt(75)
+            t.pencolor("green")
+            koch_curve2(t, depth-1, size, w)
+            t.lt(75)
+            t.pencolor("green")
+            koch_curve2(t, depth-1, size, w)
+            t.rt(150)
+            t.pencolor("white")
+            koch_curve2(t, depth-1, size, w)
+            t.lt(75)
+            t.pencolor("green")
+            koch_curve2(t, depth-1, size, w)
+  <p>
+  <h2> Sierpinski Triangle </h2>
+  <p>
+    Basic sierpinski(raphael, 4, 200)
+  <p>
+  <img src="02.png" alt="sierpinski">
+  <p>
+    sierpinski1(raphael, 4, 200)
+    In this version, each triangle is individually filled in with a different color which is randomized.
+  <p>
+  <img src="03.png" alt="sierpinski Modified">
+  <p>
+    def sierpinski1(t, depth, size, scale_factor=1):
+        if depth == 1:
+            color = (random.randrange(255),random.randrange(255), random.randrange(255))
+            triangle1(t, size, color)
+        else:
+            sierpinski1(t, depth-1, size/2)
+            t.fd(size/2)
+            sierpinski1(t, depth-1, size/2)
+            t.bk(size/2)
+            t.lt(60)
+            t.fd(size/2)
+            t.rt(60)
+            sierpinski1(t, depth-1, size/2)
+            t.rt(120)
+            t.fd(size/2)
+            t.lt(120)
+  <p>
+  <h2> Tree </h2>
+  <p>
+    Basic tree(raphael, 5, 40, 30)
+  <p>
+  <img src="04.png" alt="tree">
+  <p>
+    tree1(raphael, 6, 45, 30, 5)
+    The tree's branches are given color, width is added which decreases as the branches split, angle is randomized to make it more like a real tree.
+  <p>
+  <img src="05.png" alt="tree Modified">
+  <p>
+    def tree1(t, depth, size, angle, width):
+        t.width(width)
+        angle = angle * (random.randrange(8,12))/10
+        if depth == 0:
+            t.pencolor("green")
+            t.fd(size)
+            t.bk(size)
+            t.pencolor("brown")
+        else:
+            t.pencolor("brown")
+            t.fd(size)
+            t.rt(angle)
+            tree1(t, depth-1, size*0.8, angle, width*0.75)
+            t.lt(2 * angle)
+            tree1(t, depth-1, size*0.8, angle, width*0.75)
+            t.rt(angle)
+            t.bk(size)
+  <p>
+
+  </body>
+
+</html>

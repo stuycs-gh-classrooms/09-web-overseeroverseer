@@ -1,0 +1,27 @@
+html{
+  font-size: 25px;
+  font-family: "New Times Roman";
+  color: #8578E;
+  background-color: #C0CFFA;
+}
+
+
+img{
+  max-width:600px;
+  max-height: 400px;
+  padding: 40px;
+}
+
+h1 {
+  font-size: 70px;
+  text-align:center;
+  margin-top:20px;
+  margin-bottom: 0px;
+}
+
+h1 {
+  font-size: 40px;
+  text-align:center;
+  margin-top:20px;
+  margin-bottom: 0px;
+}
